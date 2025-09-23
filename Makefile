@@ -9,17 +9,20 @@
 # A target is considered out-of-date if any of its dependencies is out-of-date
 # The special target "all" is a convention for building everything
 
-all: clean hello test
+all: clean main KelvinTest
 
-hello:
-	g++ -std=c++11 main.cpp -o hello
+main:
+	g++ -std=c++11 main.cpp -o main
 
-test: hello
-	timeout 1s ./hello < TestCase/InputFile.txt; echo "Status:" $$?
-# Above timeout command says, run this program for 1-second and terminate it if it exceeds that duration
-# The echo command prints out the exit status of the program
-# An exit status of 0 means success, anything else is a failure
+KelvinTest: main
+	./main < TestCase/InputFile.txt
+
+# You may add your own test cases here
+# your test case should come here something like
+# 		test: main
+# 			./main < TestCase/MyInputTest.txt
+# Where, your input test will consist of three integers for the exercise
 
 # The special target "clean" is a convention for removing all generated files	
 clean:
-	rm -f a.out hello
+	rm -f a.out main main.o
