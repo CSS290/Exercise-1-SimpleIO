@@ -1,0 +1,4 @@
+# ignore files
+a.out
+*.o
+hello
