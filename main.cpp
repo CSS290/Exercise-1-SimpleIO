@@ -34,7 +34,7 @@ int main() {
     std::cin >> a;   // read an integer from keyboard and store it in a
     std::cout << "You entered: " << a << std::endl;
 
-    // If you see the repeatitive pattern of std::, you can uncomment the above
+    // If you see the repetitive pattern of std::, you can uncomment the above
     //      using namespace std;
     // and then you can write the following instead:
     //      cout << "You entered: " << a << endl;
