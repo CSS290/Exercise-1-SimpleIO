@@ -26,8 +26,7 @@
 
 
 int main() { 
-    std::cout << "Hello World" << std::endl;
-        // or cout << "Hello World" << endl;  // if using namespace std;
+    std::cout << "Hello World" << std::endl; 
 
     int a;
     std::cout << "Please enter an integer: ";
